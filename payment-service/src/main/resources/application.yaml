@@ -1,0 +1,14 @@
+server:
+  port: 9191
+spring:
+  application.name: payment-service
+  jpa:
+    properties.hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate.ddl-auto: update
+    hibernate.show-sql: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: password
+    initialization-mode: always
+    initialize: true
