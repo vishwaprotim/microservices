@@ -5,6 +5,7 @@ import com.protim.microservice.ps.api.repository.PaymentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Random;
 import java.util.UUID;
 
@@ -23,6 +24,10 @@ public class PaymentService {
     public String processPayment(){
         // 3rd party payment service call
         return new Random().nextBoolean()? "SUCCESS" : "FAILED";
+    }
+
+    public List<Payment> findPaymentByOrderId(String orderId){
+        return repository.findByOrderId(Integer.parseInt(orderId));
     }
 
 }
