@@ -24,7 +24,7 @@ Reactive (netty) gateway to handle incoming requests to both of these services. 
 - GET Find Payment Information by Order Id#100: [http://localhost:8080/payment/100](http://localhost:8080/payment/100)
 
 ## Eureka Service Discovery
-Service discovery to which all the above components have been registered.
+Service discovery to which all the above components have been registered. It runs at port 8761. You can check the registered services here: http://localhost:8761
 
 ## Postgresql DB - Steps to Install via Docker
 
