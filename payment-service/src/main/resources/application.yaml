@@ -2,7 +2,7 @@ server:
   port: 9191
 
 spring:
-  application.name: PAYMENT-SERVICE
+  application.name: payment-service
   jpa:
     properties.hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
     hibernate.ddl-auto: update
