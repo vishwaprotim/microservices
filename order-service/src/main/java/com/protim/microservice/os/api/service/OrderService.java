@@ -24,7 +24,12 @@ public class OrderService {
         payment.setOrderId(order.getId());
         payment.setAmount(order.getPrice());
 
-        Payment paymentResponse = restTemplate.postForObject("http://PAYMENT-SERVICE/payment/doPayment", payment, Payment.class);
+        Payment paymentResponse = restTemplate.postForObject("http://payment-service/payment/doPayment", payment, Payment.class);
+        // Notice how we have designed the url
+        // Instead of using the actual URI http://localhost-9191 we have used http://payment-service
+        // Thanks to Eureka Service Discovery, Order Service does not need to care about the host and port of
+        // the payment service. The service name is ofcourse, case-sensitive, as with the URIs
+
         assert paymentResponse != null;
         String message = paymentResponse.getPaymentStatus().equals("SUCCESS") ? "Payment successful!" : "Payment failed due to errors in payment API";
         Order orderResponse = repository.save(order);
