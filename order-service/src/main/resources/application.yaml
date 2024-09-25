@@ -1,7 +1,7 @@
 server:
   port: 9192
 spring:
-  application.name: order-service
+  application.name: ORDER-SERVICE
   jpa:
     properties.hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
     hibernate.ddl-auto: update
