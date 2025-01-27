@@ -27,60 +27,7 @@ Reactive (netty) gateway to handle incoming requests to both of these services. 
 Service discovery to which all the above components have been registered. It runs at port 8761. You can check the registered services here: http://localhost:8761
 
 ## Postgresql DB - Steps to Install via Docker
-
-1. Pull the latest postgres image from docker hub:
-```
-docker pull postgres
-```
-3. You can verify the images by:
-```
-docker images
-```
-4. Now we will create a container volume for postgres to store its data:
-```
-docker volume create postgres-data
-```
-5. Verify that the volume has been created using
-```
-docker volume ls
-```
-6. Now we create the docker container using the above image and volume:
-```
-docker run --name postgres-container -e POSTGRES_PASSWORD=password -p 5432:5432 -v postgres-data:/var/lib/postgresql/data -d postgres
-```
-- --name = name of the container
-- -e = environment
-- -p = port, default is 5432
-- -v = volume name, along with mount point
-- -d ‎ =  run it as a daemon or a background process
-7. You can check the container is running by:
-```
-docker ps
-```
-8. Connect to your postgres server
-```
-docker exec -it postgres-container psql -U postgres
-```
-- exec is used to execute a command inside a container
-- Here we are executing psql terminal inside the postgres-container using arguments -U postgres
-- As we all know, -U is the username flag, which is the default super user postgres
-
-10. To stop the container
-```
-docker stop postgres-container
-```
-11. Remove docker container
-```
-docker rm postgres-container
-```
-13. Remove docker image
-```
-docker rmi postgres
-```
-14. Remove docker volume
-```
-docker volume rm postgres-data
-```
+Refer to this project's wiki on how to install and run postgreSQL via docker.
 
 
 
